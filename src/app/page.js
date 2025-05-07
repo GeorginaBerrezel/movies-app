@@ -1,6 +1,95 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+/* const movies = [
+  {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'film3',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+    {
+    duration: '1h34min',
+    image: 'https://loremflickr.com/640/480?lock=1234',
+    title: 'adfga',
+    type: 'horreur',
+    rate: 4
+  },
+] */
+
+// console.log(movies);
+
 export default function Home() {
   return (
     <div className={styles.page}>
