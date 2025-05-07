@@ -18,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   .page {
-    --gray-rgb: 255, 255, 255;
+    --gray-rgb: 20, 20, 20;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
 
@@ -164,5 +164,9 @@ a.secondary {
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();
+  }
+  .page {
+    background-color: #141414;
+    color: #747474;
   }
 }
