@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-/* const movies = [
+const movies = [
   {
     duration: '1h34min',
     image: 'https://loremflickr.com/640/480?lock=1234',
@@ -86,12 +86,17 @@ import styles from "./page.module.css";
     type: 'horreur',
     rate: 4
   },
-] */
+]
+
 
 // console.log(movies);
 
+
+
+
 export default function Home() {
   return (
+  
     <div className={styles.page}>
       <main className={styles.main}>
         <Image
@@ -107,7 +112,21 @@ export default function Home() {
             Get started by editing <code>src/app/page.js</code>.
           </li>
           <li>Save and see your changes instantly.</li>
+          
         </ol>
+
+        <ol>
+  {movies.map((movie, index) => (
+    <li key={index}>
+      <h3>{movie.title}</h3>
+      <p>Durée : {movie.duration}</p>
+      <p>Type : {movie.type}</p>
+      <p>Note : {movie.rate}/5</p>
+      <img src={movie.image} alt={movie.title} width={200} />
+    </li>
+  ))}
+</ol>
+
 
         <div className={styles.ctas}>
           <a
