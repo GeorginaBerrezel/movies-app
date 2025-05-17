@@ -1,12 +1,11 @@
-import styles from "./Test.module.css";
+import styles from "./movieCard.module.css";
 
-export default function MovieCard({ movie }) {
+export default function movieCard({ movie }) {
   return (
     <li className={styles.card} style={{ backgroundImage: `url(${movie.image})` }}>
         <div className={styles.overlay}>
             <img src={movie.image} alt={movie.title} className={styles.image} />
             <div className={styles.header}>
-                {/* <h3>{movie.title}</h3> */}
             </div>
             <div className={styles.body}>
             <h3>{movie.title}</h3>
