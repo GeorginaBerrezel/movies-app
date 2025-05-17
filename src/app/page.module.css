@@ -59,6 +59,7 @@
 }
 
 .cardGrid {
+  position: relative; /* important pour z-index */
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* cartes flexibles */
@@ -68,8 +69,8 @@
   width: 100vw; /* toute la largeur de l’écran */
   max-width: 100%; /* pour pas dépasser */
   box-sizing: border-box; /* gère bien le padding */
+  align-self: stretch; /* pour s'étendre comme le reste */
 }
-
 
 .ctas {
   display: flex;
