@@ -7,6 +7,8 @@
   --button-secondary-hover: #f2f2f2;
 
   display: grid;
+  background-color: #141414;
+  color: grey;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
@@ -55,6 +57,19 @@
   border-radius: 4px;
   font-weight: 600;
 }
+
+.cardGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* cartes flexibles */
+  gap: 1rem;
+  padding: 1rem; /* un peu de marge autour */
+  margin: 0 auto;
+  width: 100vw; /* toute la largeur de l’écran */
+  max-width: 100%; /* pour pas dépasser */
+  box-sizing: border-box; /* gère bien le padding */
+}
+
 
 .ctas {
   display: flex;

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import MovieCard from "./components/MovieCard.jsx"; 
 
 const movies = [
   {
@@ -99,7 +100,7 @@ export default function Home() {
   
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
+{/*         <Image
           className={styles.logo}
           src="/next.svg"
           alt="Next.js logo"
@@ -113,21 +114,15 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
           
+        </ol> */}
+        <ol className={styles.cardGrid}>
+          {movies.map((movie, index) => (
+            <MovieCard key={index} movie={movie} />
+          ))}
         </ol>
 
-        <ol>
-  {movies.map((movie, index) => (
-    <li key={index}>
-      <h3>{movie.title}</h3>
-      <p>Durée : {movie.duration}</p>
-      <p>Type : {movie.type}</p>
-      <p>Note : {movie.rate}/5</p>
-      <img src={movie.image} alt={movie.title} width={200} />
-    </li>
-  ))}
-</ol>
 
-
+{/* 
         <div className={styles.ctas}>
           <a
             className={styles.primary}
@@ -153,6 +148,8 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+*/}
+       
       </main>
       <footer className={styles.footer}>
         <a
