@@ -9,11 +9,11 @@
   display: grid;
   background-color: #141414;
   color: grey;
-  grid-template-rows: 20px 1fr 20px;
+  /* grid-template-rows: 20px 1fr 20px; */
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
+  /* padding: 80px; */
   gap: 64px;
   font-family: var(--font-geist-sans);
 }
@@ -34,12 +34,12 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .main ol {
   font-family: var(--font-geist-mono);
-  padding-left: 0;
+  /* padding-left: 0; */
   margin: 0;
   font-size: 14px;
   line-height: 24px;
@@ -144,10 +144,10 @@ a.secondary {
 }
 
 @media (max-width: 600px) {
-  .page {
+  /* .page {
     padding: 32px;
     padding-bottom: 80px;
-  }
+  } */
 
   .main {
     align-items: center;
