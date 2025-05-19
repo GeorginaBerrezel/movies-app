@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from 'react'
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import MovieCard from "./components/movieCard/movieCard.jsx"; 
@@ -12,103 +16,21 @@ const options = {
   }
 };
 
-fetch(url, options)
-  .then(res => res.json())
-  .then(json => console.log(json))
-  .catch(err => console.error(err));
-
-const movies = [
-  {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'film3',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-    {
-    duration: '1h34min',
-    image: 'https://loremflickr.com/640/480?lock=1234',
-    title: 'adfga',
-    type: 'horreur',
-    rate: 4
-  },
-]
-
-// console.log(movies);
 
 export default function Home() {
-  return (
   
+ const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => {
+        setMovies(data.results); // on stocke les films
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  return (
     <div className={styles.page}>
       <main className={styles.main}>
         <ol className={styles.cardGrid}>
@@ -116,7 +38,6 @@ export default function Home() {
             <MovieCard key={index} movie={movie} />
           ))}
         </ol>
-
       </main>
       <footer className={styles.footer}>
         <a
