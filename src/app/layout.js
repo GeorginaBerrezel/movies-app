@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "./page.module.css";
+import Navbar from "./components/navBar/navbar.jsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav><p>This is nav
+        <nav>
+                <Navbar />
+
+          {/* <p>This is nav
           </p>
                   <Image
           className={styles.logo}
@@ -31,7 +35,8 @@ export default function RootLayout({ children }) {
           width={180}
           height={38}
           priority
-        /></nav>
+        /> */}
+        </nav>
         {children}
       </body>
     </html>
