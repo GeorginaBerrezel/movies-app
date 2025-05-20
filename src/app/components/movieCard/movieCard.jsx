@@ -15,11 +15,11 @@ export default function MovieCard({ movie }) {
           </div>
 
           <div className={styles.body}>
-            <p>Date de sortie : {movie.release_date}</p>
-            <p>Langue : {movie.original_language.toUpperCase()}</p>
+            <p>Release date : {movie.release_date}</p>
+            <p>Language : {movie.original_language.toUpperCase()}</p>
             <p className={styles.overview}>{movie.overview}</p>
             <div className={styles.extraInfo}>
-              <p>Popularité : {Math.round(movie.popularity)}</p>
+              <p>Popularity : {Math.round(movie.popularity)}</p>
               <p>Votes : {movie.vote_average} ({movie.vote_count} avis)</p>
             </div>
           </div>
