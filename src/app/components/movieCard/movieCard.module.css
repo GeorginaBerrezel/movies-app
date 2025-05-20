@@ -3,112 +3,94 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
   padding: 1rem;
-  margin: 0 auto;
-  width: 100vw;
-  max-width: 100%;
-  box-sizing: border-box;
   position: relative;
 }
 
+/* Wrapper garde la place dans la grille */
+.cardWrapper {
+  position: relative;
+  height: 200px;
+}
+
+/* Carte normale */
 .card {
   position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
   color: white;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-repeat: no-repeat;
-  /* transform-origin: center top; */
   z-index: 1;
 }
 
-/* Hover effet popup */
-.card:hover {
-  transform: scale(1.6);
+/* Hover effet façon Netflix */
+.cardWrapper:hover .card {
+  position: absolute;
+  top: -80px;
+  left: -50px;
+  width: 300px;
+  height: fit-content;
+  transform: scale(1.3);
   z-index: 10;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-  /* height: 230px; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* Overlay semi-transparent */
+/* Overlay */
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
   padding: 1rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
   justify-content: flex-end;
+  border-radius: 8px;
 }
 
 .image {
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
   width: 100%;
   height: auto;
-  transform: scale(0.95);
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
   object-fit: cover;
-}
-
-/* Montre l'image au hover */
-.card:hover .image {
-  opacity: 1;
-  max-height: 10px; /* ou auto si tu préfères */
-  transform: scale(1);
-}
-
-/* Titre toujours visible */
-.header h3 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* Infos cachées par défaut sauf durée */
-.body p,
-.extraInfo {
   opacity: 0;
   max-height: 0;
-  overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-/* Durée toujours visible */
-.body p:first-child {
-  opacity: 1;
-  max-height: 20px;
-  /*margin: 0.5rem 0;*/
-}
-
-/* Overlay plus foncé au hover */
-.card:hover .overlay {
-  background: #181818;
-  /*justify-content: flex-start;*/
-  justify-content: flex-end; 
-  height: auto;
-}
-
-/* Affiche tout au hover */
-.card:hover .body p,
-.card:hover .extraInfo {
+.cardWrapper:hover .image {
   opacity: 1;
   max-height: 100px;
 }
 
+.header h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.body p,
 .extraInfo {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
   color: #ccc;
-  /*margin-top: 0.5rem;*/
+  margin: 0.2rem 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.overview {
+  max-height: 60px;
+  overflow-y: auto;
+}
+
+/* Tout s’affiche au hover */
+.cardWrapper:hover .body p,
+.cardWrapper:hover .extraInfo {
+  opacity: 1;
+  max-height: 500px;
 }
