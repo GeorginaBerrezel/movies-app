@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import MovieCard from "./components/movieCard/movieCard.jsx";
-import FilterUI from "./components/FilterUI/FilterUI.jsx";
+import FilterUI from "./components/filterUI/FilterUI.jsx";
 
 const url =
   "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc";
