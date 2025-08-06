@@ -109,6 +109,13 @@ a.secondary {
   min-width: 158px;
 }
 
+.button_filter {
+  background: #fff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
 .footer {
   grid-row-start: 3;
   display: flex;
