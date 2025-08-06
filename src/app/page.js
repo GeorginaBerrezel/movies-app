@@ -21,6 +21,7 @@ const options = {
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [allMovies, setAllMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(url, options)
@@ -28,8 +29,12 @@ export default function Home() {
       .then((data) => {
         setMovies(data.results);
         setAllMovies(data.results);
+        setLoading(false);
       })
-      .catch((err) => console.error("Erreur fetch TMDB :", err));
+      .catch((err) => {
+        console.error("Erreur fetch TMDB :", err);
+        setLoading(false);
+      });
   }, []);
 
   const handleFilter = ({ note, lang, search, year }) => {
@@ -67,11 +72,18 @@ export default function Home() {
       <main className={styles.main}>
         <FilterUI onFilter={handleFilter} onReset={resetFilters} />
 
-        <ol className={styles.cardGrid}>
-          {movies.map((movie, index) => (
-            <MovieCard key={index} movie={movie} />
-          ))}
-        </ol>
+        {loading ? (
+          <p className={styles.loading}>Chargement des films...</p>
+        ) : (
+          <>
+            <p className={styles.count}>{movies.length} films trouvés</p>
+            <ol className={styles.cardGrid}>
+              {movies.map((movie, index) => (
+                <MovieCard key={index} movie={movie} />
+              ))}
+            </ol>
+          </>
+        )}
       </main>
 
       <footer className={styles.footer}>
